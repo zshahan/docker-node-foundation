@@ -8,4 +8,4 @@ RUN apk --no-cache add --virtual native-deps \
   npm install --quiet node-gyp -g && \
   npm install --quiet gulp-cli -g && \
   npm install --quiet foundation-cli -g && \
-  apk delete native-deps
+  apk del native-deps

@@ -8,6 +8,7 @@ RUN apk --no-cache add --virtual native-deps \
   npm install --quiet node-gyp -g && \
   npm install --quiet gulp-cli -g && \
   npm install --quiet foundation-cli -g && \
-  apk del native-deps
+  apk del native-deps && \
+  chmod -R a+rwx ~/.config
 
 USER 1001

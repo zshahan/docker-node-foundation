@@ -9,3 +9,5 @@ RUN apk --no-cache add --virtual native-deps \
   npm install --quiet gulp-cli -g && \
   npm install --quiet foundation-cli -g && \
   apk del native-deps
+
+USER 1001

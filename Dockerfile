@@ -7,8 +7,9 @@ RUN apk --no-cache add --virtual native-deps \
   file nasm zlib-dev && \
   npm install --quiet node-gyp -g && \
   npm install --quiet gulp-cli -g && \
-  npm install --quiet foundation-cli -g && \
-  apk del native-deps && \
-  chmod -R a+rwx ~/.config
-
-USER 1001
+  npm install --quiet bower -g && \
+  curl -Lo package.json https://github.com/zurb/foundation-sites-template/blob/master/package.json && \
+  curl -Lo bower.json https://github.com/zurb/foundation-sites-template/blob/master/bower.json && \
+  npm install --quiet && \
+  bower install --quiet --allow-root && \
+  apk del native-deps
